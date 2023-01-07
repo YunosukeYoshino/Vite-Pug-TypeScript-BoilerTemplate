@@ -1,0 +1,17 @@
+block config
+  - const title = 'タイトル'
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    block head
+      title #{pageTitle ? `${pageTitle} | サイト名` : 'サイト名'}
+
+    //- link(href='/style.css')
+    block script
+    script(src="ts/main.ts" type="module")
+  body
+    include ../includes/header.pug
+    .contents
+      block contents
+    include ../includes/footer.pug
